@@ -39,3 +39,15 @@
     [] Service banner grabbing (connecting to an open port and reading the first response).
     [] UDP port scanning (much more complex and unreliable).
     [] Adjustable timeout and number of concurrent workers.
+
+### System commands to check your cpu and more
+
+    - nproc                            # CPU cores
+    - ulimit -n                        # max open files for the shell
+    - cat /proc/sys/fs/file-max        # system-wide FD limit
+
+# While running scan, in another terminal:
+
+    - ss -s                            # socket summary
+    - ss -tn state established         # established TCP sockets
+    - watch -n1 'ss -s; echo; ls /proc/$(pgrep yourbinary)/fd | wc -l'   # monitor sockets + fds
