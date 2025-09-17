@@ -7,6 +7,7 @@
     ```
     docker run -u ${UID}:${UID} -it -v ./:/usr/src/app -w /usr/src/app golang bash
     docker run -it -v ./:/usr/src/app -w /usr/src/app golang bash ====== this runs as root
+    docker run -it -v ./:/usr/src/app -w /usr/src/app --network=host golang bash  ====== runs in host mode
     ```
 
 ## Run in container
